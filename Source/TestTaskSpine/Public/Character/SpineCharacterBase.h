@@ -5,13 +5,14 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
 #include "GameFramework/Character.h"
+#include "Interaction/CombatInterface.h"
 #include "SpineCharacterBase.generated.h"
 
 class USpineAttributeSet;
 class USpineAbilitySystemComponent;
 
 UCLASS()
-class TESTTASKSPINE_API ASpineCharacterBase : public ACharacter, public IAbilitySystemInterface
+class TESTTASKSPINE_API ASpineCharacterBase : public ACharacter, public IAbilitySystemInterface, public ICombatInterface
 {
 	GENERATED_BODY()
 
@@ -25,9 +26,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite)
 	TObjectPtr<USpineAttributeSet> AttributeSet;
+
+	virtual void TakeDamage_Implementation() override;
 protected:
 	virtual void BeginPlay() override;
-
 
 public:	
 	virtual void Tick(float DeltaTime) override;

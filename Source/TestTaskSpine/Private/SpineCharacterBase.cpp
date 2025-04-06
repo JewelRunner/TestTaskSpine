@@ -24,6 +24,11 @@ void ASpineCharacterBase::BeginPlay()
 	Super::BeginPlay();
 }
 
+void ASpineCharacterBase::TakeDamage_Implementation()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Take Damage"))
+}
+
 void ASpineCharacterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
