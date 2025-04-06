@@ -6,8 +6,11 @@
 #include "UObject/Interface.h"
 #include "CombatInterface.generated.h"
 
+class ASpineCharacter;
+class USpineAbilitySystemComponent;
+
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(BlueprintType)
 class UCombatInterface : public UInterface
 {
 	GENERATED_BODY()
@@ -22,6 +25,4 @@ class TESTTASKSPINE_API ICombatInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	UFUNCTION(BlueprintNativeEvent)
-	void TakeDamage();
 };

@@ -27,7 +27,6 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TObjectPtr<USpineAttributeSet> AttributeSet;
 
-	virtual void TakeDamage_Implementation() override;
 protected:
 	virtual void BeginPlay() override;
 

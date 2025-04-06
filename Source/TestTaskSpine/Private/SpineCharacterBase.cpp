@@ -12,6 +12,11 @@ ASpineCharacterBase::ASpineCharacterBase()
 
 	AbilitySystemComponent = CreateDefaultSubobject<USpineAbilitySystemComponent>("AbilitySystemComponent");
 	AttributeSet = CreateDefaultSubobject<USpineAttributeSet>(TEXT("AttributeSet"));
+
+	AttributeSet->InitHealth(0.f);
+	AttributeSet->InitMaxHealth(0.f);
+	AttributeSet->InitStamina(0.f);
+	AttributeSet->InitMaxStamina(0.f);
 }
 
 UAbilitySystemComponent* ASpineCharacterBase::GetAbilitySystemComponent() const
@@ -24,15 +29,9 @@ void ASpineCharacterBase::BeginPlay()
 	Super::BeginPlay();
 }
 
-void ASpineCharacterBase::TakeDamage_Implementation()
-{
-	UE_LOG(LogTemp, Warning, TEXT("Take Damage"))
-}
-
 void ASpineCharacterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ASpineCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

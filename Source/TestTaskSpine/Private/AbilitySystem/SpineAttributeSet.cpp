@@ -27,6 +27,15 @@ void USpineAttributeSet::PostAttributeChange(const FGameplayAttribute& Attribute
 {
 	Super::PostAttributeChange(Attribute, OldValue, NewValue);
 
+	if (Attribute == GetHealthAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxHealth());
+	}
+	if (Attribute == GetStaminaAttribute())
+	{
+		NewValue = FMath::Clamp(NewValue, 0.f, GetMaxStamina());
+	}
+
 	OnAttributeChanged.Broadcast(Attribute, NewValue);
 }
 
