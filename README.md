@@ -1,3 +1,5 @@
+The project was developed on Unreal Engine 5.5.
+
 The goal I set for myself is to develop the project within 8 hours. Total time spent:
 
 1. GAS Installation and configuration. ~3 hours.
